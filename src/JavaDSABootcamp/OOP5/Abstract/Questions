@@ -1,0 +1,25 @@
+Q: Why can't we have a final abstract class?
+
+A: The `final` and `abstract` keywords in Java have opposing purposes, which is why they cannot be used together to modify a class.
+
+   1. `final`: A class declared as `final` cannot be subclassed.
+      This means no other class can `extend` a `final` class.
+      It's a way to guarantee that this class is the "end of the line" in the inheritance hierarchy, and its implementation is the final one.
+   2. `abstract`: An `abstract` class, on the other hand, is a class that is specifically designed to be subclassed.
+      It often contains one or more `abstract` methods, which are methods declared without an implementation.
+      The `abstract` class itself cannot be instantiated, but it can be subclassed, and its `abstract` methods
+      must be implemented by any concrete (i.e., non-abstract) subclass.
+
+   So if a class were both `final` and `abstract`, it would be a contradiction—it would have to be subclassed
+   (because it's `abstract`), but it could not be subclassed (because it's `final`).
+   This is why the two keywords cannot be used together in Java.
+
+   Q: Why can't we create abstract constructors?
+   A: The purpose of an `abstract` method in Java is to be overridden in a subclass.
+      An `abstract` method is a method without a body, that is, it is a method declared in an `abstract` class without any implementation.
+      On the other hand, a constructor is a special method that is used to initialize an object of a class when it is created.
+      Each time a new object is created, the constructor is called. The constructor's name is the same as the class name, and it doesn't have a return type.
+      In Java, a constructor cannot be overridden like a regular method. Each class, including subclasses, has its own constructor(s),
+      which can call the superclass's constructor through the `super` keyword, but this is not the same as overriding.
+      Due to these differences, the concept of an `abstract` constructor doesn't make sense in Java. An `abstract` method is one that must be overridden,
+      but a constructor cannot be overridden. Thus, constructors cannot be declared `abstract` in Java.

@@ -1,0 +1,7 @@
+b	For formatting an argument that is Boolean
+c	For formatting an argument that is a Unicode character
+s	For formatting an argument that is a string
+d	For formatting an argument that is a decimal integer
+f	For formatting an argument that is a number with a decimal point
+%	For printing only % for the argument, ‘%’
+n	To cause the rest of the text on its right, to go on the next line at the output
